@@ -1,8 +1,5 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "prettier-check-diff": "git diff-index --name-only HEAD | grep -e js\\$ | grep -v -e json\\$ | grep -v .eslintrc.js | xargs -r find 2>/dev/null | xargs -r prettier -l",
     "prettier-write": "prettier --write \"**/*.js\"",
