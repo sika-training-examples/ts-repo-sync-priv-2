@@ -5,7 +5,3 @@ COPY . .
 RUN --mount=type=cache,target=/app/node_modules yarn install
 ARG SITE
 RUN --mount=type=cache,target=/app/node_modules yarn run static-$SITE
-
-FROM nginx:alpine
-ARG SITE
-COPY --from=build /app/packages/$SITE/out /usr/share/nginx/html
